@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -12725,6 +12725,10 @@ CONN_03x2
 <part name="X4" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-?-05" device="27-2051"/>
 <part name="IC7" library="SamacSys_Parts" deviceset="FDS9435A" device=""/>
 <part name="IC8" library="SamacSys_Parts" deviceset="FDS9435A" device=""/>
+<part name="C15" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
+<part name="GND37" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C16" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
+<part name="GND38" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12906,8 +12910,8 @@ CONN_03x2
 <attribute name="NAME" x="57.15" y="55.499" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="57.15" y="53.34" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="P+1" gate="VCC" x="-123.19" y="107.95" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-120.65" y="105.41" size="1.778" layer="96" rot="R180"/>
+<instance part="P+1" gate="VCC" x="-125.73" y="110.49" smashed="yes">
+<attribute name="VALUE" x="-128.27" y="107.95" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+8" gate="VCC" x="60.96" y="49.53" smashed="yes" rot="R270">
 <attribute name="VALUE" x="58.42" y="52.07" size="1.778" layer="96"/>
@@ -12956,8 +12960,8 @@ CONN_03x2
 <instance part="GND8" gate="1" x="-36.83" y="107.95" smashed="yes" rot="MR270">
 <attribute name="VALUE" x="-34.29" y="110.49" size="1.778" layer="96" rot="MR270"/>
 </instance>
-<instance part="P+6" gate="VCC" x="-36.83" y="100.33" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-39.37" y="102.87" size="1.778" layer="96"/>
+<instance part="P+6" gate="VCC" x="-34.29" y="102.87" smashed="yes">
+<attribute name="VALUE" x="-36.83" y="100.33" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="IC6" gate="B" x="91.44" y="133.35" smashed="yes">
 <attribute name="NAME" x="93.98" y="136.525" size="1.778" layer="95"/>
@@ -13202,6 +13206,20 @@ CONN_03x2
 <attribute name="NAME" x="214.63" y="121.92" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="214.63" y="119.38" size="1.778" layer="96" align="center-left"/>
 </instance>
+<instance part="C15" gate="G$1" x="-132.08" y="107.95" smashed="yes" rot="R270">
+<attribute name="NAME" x="-131.699" y="106.426" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-136.779" y="106.426" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND37" gate="1" x="-139.7" y="107.95" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="-142.24" y="105.41" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="C16" gate="G$1" x="-27.94" y="100.33" smashed="yes" rot="R270">
+<attribute name="NAME" x="-27.559" y="98.806" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-32.639" y="98.806" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND38" gate="1" x="-22.86" y="100.33" smashed="yes" rot="MR270">
+<attribute name="VALUE" x="-20.32" y="102.87" size="1.778" layer="96" rot="MR270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -13218,6 +13236,10 @@ CONN_03x2
 <segment>
 <pinref part="IC1" gate="G$1" pin="VCC"/>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
+<wire x1="-125.73" y1="107.95" x2="-120.65" y2="107.95" width="0.1524" layer="91"/>
+<pinref part="C15" gate="G$1" pin="1"/>
+<wire x1="-129.54" y1="107.95" x2="-125.73" y2="107.95" width="0.1524" layer="91"/>
+<junction x="-125.73" y="107.95"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="A"/>
@@ -13242,6 +13264,10 @@ CONN_03x2
 <segment>
 <pinref part="IC1" gate="G$1" pin="AVCC"/>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
+<wire x1="-34.29" y1="100.33" x2="-39.37" y2="100.33" width="0.1524" layer="91"/>
+<pinref part="C16" gate="G$1" pin="2"/>
+<wire x1="-33.02" y1="100.33" x2="-34.29" y2="100.33" width="0.1524" layer="91"/>
+<junction x="-34.29" y="100.33"/>
 </segment>
 <segment>
 <pinref part="IC6" gate="P" pin="V+"/>
@@ -13489,6 +13515,14 @@ CONN_03x2
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C15" gate="G$1" pin="2"/>
+<pinref part="GND37" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C16" gate="G$1" pin="1"/>
+<pinref part="GND38" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="RESET" class="0">
